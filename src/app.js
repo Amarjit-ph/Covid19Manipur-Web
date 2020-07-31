@@ -11,6 +11,13 @@ const App = () => {
     const [Recovered, setRecovered] = useState('');
     const [Active, setActive] = useState('');
     const [Tested, setTested] = useState('');
+    const [Dead, setDead] = useState('')
+
+    const [Tconfirm, setTconfrim] = useState(0)
+    const [Trecovered, setTrecovered] = useState(0)
+    const [Tdead, setTdead] = useState(0)
+    const [Ttested, setTtested] = useState(0)
+    const [update, setupdate] = useState('')
 
     //Bishnupur
     const [BSpop, setBSpop] = useState('')
@@ -99,10 +106,19 @@ const App = () => {
             .then(data => Data = data)
             .then(data => {
                 //console.log(Data);
+
                 setConfirm(Data.MN.total.confirmed);
                 setRecovered(Data.MN.total.recovered);
                 setActive(Data.MN.total.confirmed - Data.MN.total.recovered);
                 setTested(Data.MN.total.tested);
+                setDead(Data.MN.total.deceased);
+
+                setTconfrim(Data.MN.delta.confirmed)
+                setTrecovered(Data.MN.delta.recovered)
+                setTtested(Data.MN.delta.tested)
+                setTdead(Data.MN.delta.deceased)
+
+                setupdate(Data.MN.meta.tested.last_updated)
 
                 //Bishnupur BS
                 setBScon(Data.MN.districts.Bishnupur.total.confirmed);
@@ -219,13 +235,41 @@ const App = () => {
                     </div>
 
                     <div>
+                        <span className='N5'><b>{Dead}</b></span>
+                        <span className='T4'><b>Dead</b></span>
+                    </div>
+
+                    <div>
                         <span className='N4'><b>{Tested}</b></span>
                         <span className='T4'><b>Tested</b></span>
                     </div>
 
                     <br />
                 </div>
+                <p><b>Last Updated : {update}</b></p>
                 <b><p>This is not Real Time data but data will be updated every single day.</p></b>
+                <h3>TODAY</h3>
+                <div className='today'>
+                    <div>
+                        <span className='N2'><b>{Tconfirm}</b></span>
+                        <span className='T2'><b>Confirmed</b></span>
+                    </div>
+
+                    <div>
+                        <span className='N3'><b>{Trecovered}</b></span>
+                        <span className='T3'><b>Recovered</b></span>
+                    </div>
+
+                    <div>
+                        <span className='N5'><b>{Tdead}</b></span>
+                        <span className='T4'><b>Dead</b></span>
+                    </div>
+
+                    <div>
+                        <span className='N4'><b>{Ttested}</b></span>
+                        <span className='T4'><b>Tested</b></span>
+                    </div>
+                </div>
 
 
 
@@ -234,101 +278,90 @@ const App = () => {
                 <div className='District_level'>
                     <div>
                         <p><b>Bishnupur</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{BScon - BSrec}</b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{BScon}</b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{BSrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{BScon}</b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{BSrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Chandel</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{CHcon - CHrec}</b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{CHcon} </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{CHrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{CHcon} </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{CHrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Churachandpur</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{CHUcon - CHUrec} </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{CHUcon} </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{CHUrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{CHUcon} </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{CHUrec}</b> </p>
                     </div>
                     <div>
                         <p><b>Imphal East</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{IEcon - IErec} </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{IEcon} </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{IErec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{IEcon} </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{IErec}</b> </p>
                     </div>
                     <div>
                         <p><b>Imphal West</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{IWcon - IWrec} </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{IWcon} </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{IWrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{IWcon} </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{IWrec}</b> </p>
                     </div>
                     <div>
                         <p><b>Jiribam</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{Jcon - Jrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{Jcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{Jrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{Jcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{Jrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Kakching</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{KAKcon - KAKrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{KAKcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{KAKrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{KAKcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{KAKrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Kamjong</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{KAMcon - KAMrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{KAMcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{KAMrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{KAMcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{KAMrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Kangpokpi</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{KANGcon - KANGrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{KANGcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{KANGrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{KANGcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{KANGrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Noney</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{NONcon - NONrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{NONcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{NONrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{NONcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{NONrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Pherzawl</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{PHERcon - PHERrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{PHERcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{PHERrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{PHERcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{PHERrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Senapati</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{SENcon - SENrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{SENcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{SENrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{SENcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{SENrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Tamenglong</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{TAMcon - TAMrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{TAMcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{TAMrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{TAMcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{TAMrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Tengnoupal</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{TENcon - TENrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{TENcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{TENrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{TENcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{TENrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Thoubal</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{THOUcon - THOUrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{THOUcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{THOUrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{THOUcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{THOUrec}</b> </p>
                     </div>
 
                     <div>
                         <p><b>Ukhrul</b></p>
-                        <p><span style={{ color: '#FF0000' }}>A</span> <b>{UKHcon - UKHrec}
-                        </b>  <span style={{ color: '#BF1D1D' }}>C</span> <b>{UKHcon}
-                            </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{UKHrec}</b> </p>
+                        <p><span style={{ color: '#BF1D1D' }}>C</span> <b>{UKHcon}
+                        </b>  <span style={{ color: '#1DAA1D' }}>R</span> <b>{UKHrec}</b> </p>
                     </div>
 
                 </div>
