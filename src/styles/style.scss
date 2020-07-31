@@ -1,0 +1,95 @@
+.Header{
+    top:0;
+    left:0;
+    padding: 5px;
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    background-color: white;
+    img{
+        height:16%;
+        width: 16%;
+        margin-bottom: 0;
+    }
+    span{
+        color: #BF1D1D;
+    }
+    .T{
+        font-size:xx-large;
+    }
+    .S{
+        font-size: x-large;
+    }
+    div{
+        margin-top: 5px;
+        margin-left:10px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.state{
+    margin-top: 20%;
+    div{
+        width: 100%;
+        border: solid black 2px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        .N1{
+                color:#FF0000 ;
+                font-size: 15vw;
+                padding-top: 10px;
+        }
+        .T1{
+            font-size: 5vw;
+            padding-top: 18px;
+        }
+
+        .N2{
+            color:#BF1D1D;
+            font-size: 15vw;
+            padding-top: 10px;
+        }
+        .T2{
+            font-size: 5vw;
+            padding-top: 18px;
+        }
+
+        .N3{
+            color:#1DAA1D;
+            font-size: 15vw;
+            padding-top: 10px;
+        }
+        .T3{
+            font-size: 5vw;
+            padding-top: 18px;
+        }
+
+        .N4{
+            color:#0C79DF ;
+            font-size: 15vw;
+            padding-top: 10px;
+        }
+        .T4{
+            font-size: 5vw;
+            padding-top: 18px;
+        }
+        
+    }
+}
+
+.District_level{
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: solid black 1px;
+        p{
+            margin: 0;
+            font-size: large;
+            padding:5px;
+        }
+    }
+}
