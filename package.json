@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "live": "live-server public",
-    "build-pro": "webpack -p --env production",
+    "build": "webpack -p --env production",
     "heroku-postbuild": "yarn run build-pro",
     "dev": "webpack-dev-server --env development",
     "start": "node server/server.js",
