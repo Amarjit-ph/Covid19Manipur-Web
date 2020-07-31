@@ -218,9 +218,9 @@ const App = () => {
 
                 <div className='state'>
 
-                    <b><p>Corona Virus Tracker for Manipur is Developed using data from a volunteer-driven, crowd-sourced database for COVID-19 stats & patient tracing in India.</p></b>
+                    <p><b>Corona Virus Tracker for Manipur is Developed using data from Directorate of Information & Public Relations Manipur</b></p>
                     <div>
-                        <span className='N1'><b>{Active}</b></span>
+                        <span className='N1'><b>{Active - Tdead}</b></span>
                         <span className='T1'><b>Active</b></span>
                     </div>
 
