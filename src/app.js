@@ -19,6 +19,8 @@ const App = () => {
     const [Ttested, setTtested] = useState(0)
     const [update, setupdate] = useState('')
 
+    const [Delta, setDelta] = useState(false)
+
     //Bishnupur
     const [BSpop, setBSpop] = useState('')
     const [BSrec, setBSrec] = useState('')
@@ -113,10 +115,18 @@ const App = () => {
                 setTested(Data.MN.total.tested);
                 setDead(Data.MN.total.deceased);
 
-                setTconfrim(Data.MN.delta.confirmed)
-                setTrecovered(Data.MN.delta.recovered)
-                setTtested(Data.MN.delta.tested)
-                setTdead(Data.MN.delta.deceased)
+                try {
+                    setTconfrim(Data.MN.delta.confirmed)
+                    setTrecovered(Data.MN.delta.recovered)
+                    setTtested(Data.MN.delta.tested)
+                    setTdead(Data.MN.delta.deceased)
+                    setDelta(true);
+                } catch (exception) {
+                    setDelta(false);
+                    // do something else
+                }
+
+
 
                 setupdate(Data.MN.meta.tested.last_updated)
 
@@ -249,27 +259,36 @@ const App = () => {
                 <p><b>Last Updated : {update}</b></p>
                 <b><p>This is not Real Time data but data will be updated every single day.</p></b>
                 <h3>TODAY</h3>
-                <div className='today'>
-                    <div>
-                        <span className='N2'><b>{Tconfirm}</b></span>
-                        <span className='T2'><b>Confirmed</b></span>
-                    </div>
+                <p><b>Daily Update will be displayed when data is Available</b></p>
 
-                    <div>
-                        <span className='N3'><b>{Trecovered}</b></span>
-                        <span className='T3'><b>Recovered</b></span>
-                    </div>
+                {
+                    Delta ?
+                        <div className='today'>
+                            <div>
+                                <span className='N2'><b>{Tconfirm}</b></span>
+                                <span className='T2'><b>Confirmed</b></span>
+                            </div>
 
-                    <div>
-                        <span className='N5'><b>{Tdead}</b></span>
-                        <span className='T4'><b>Dead</b></span>
-                    </div>
+                            <div>
+                                <span className='N3'><b>{Trecovered}</b></span>
+                                <span className='T3'><b>Recovered</b></span>
+                            </div>
 
-                    <div>
-                        <span className='N4'><b>{Ttested}</b></span>
-                        <span className='T4'><b>Tested</b></span>
-                    </div>
-                </div>
+                            <div>
+                                <span className='N5'><b>{Tdead}</b></span>
+                                <span className='T4'><b>Dead</b></span>
+                            </div>
+
+                            <div>
+                                <span className='N4'><b>{Ttested}</b></span>
+                                <span className='T4'><b>Tested</b></span>
+                            </div>
+                        </div>
+                        :
+                        <div></div>
+                }
+
+
 
 
 
