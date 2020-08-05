@@ -107,7 +107,7 @@ const App = () => {
             .then(res => res.json())
             .then(data => Data = data)
             .then(data => {
-                console.log(Data);
+                //console.log(Data);
 
                 setConfirm(Data.MN.total.confirmed);
                 setRecovered(Data.MN.total.recovered);
@@ -239,7 +239,7 @@ const App = () => {
 
             <Layout>
                 <div className='state'>
-                    <div>
+                    <div className='A'>
                         <span className='N1'><b>{Active - Dead}</b></span>
                         <span className='T1'><b>Active</b></span>
                     </div>
@@ -268,30 +268,33 @@ const App = () => {
                 </div>
             </Layout>
 
-            <div className='district_head'>
-                <p><b>UPDATE<br />{update}</b></p>
-            </div>
+
 
             {
                 Delta ?
-                    <Layout>
-                        <div className='today'>
-                            <div>
-                                <span className='N2'><b>{Tconfirm}</b></span>
-                                <span className='T2'><b>Confirmed</b></span>
-                            </div>
-
-                            <div>
-                                <span className='N3'><b>{Trecovered}</b></span>
-                                <span className='T3'><b>Recovered</b></span>
-                            </div>
-
-                            <div>
-                                <span className='N5'><b>{Tdead}</b></span>
-                                <span className='T4'><b>Deaths</b></span>
-                            </div>
+                    <div>
+                        <div className='district_head'>
+                            <p><b>UPDATE<br />{update}</b></p>
                         </div>
-                    </Layout>
+                        <Layout>
+                            <div className='today'>
+                                <div>
+                                    <span className='N2'><b>{Tconfirm}</b></span>
+                                    <span className='T2'><b>Confirmed</b></span>
+                                </div>
+
+                                <div>
+                                    <span className='N3'><b>{Trecovered}</b></span>
+                                    <span className='T3'><b>Recovered</b></span>
+                                </div>
+
+                                <div>
+                                    <span className='N5'><b>{Tdead}</b></span>
+                                    <span className='T4'><b>Deaths</b></span>
+                                </div>
+                            </div>
+                        </Layout>
+                    </div>
                     :
                     <div></div>
             }
@@ -396,6 +399,11 @@ const App = () => {
 
                 </div>
             </Layout>
+
+            <div className='Footer'>
+                <p><b>DESIGN & DEVELOPED</b></p><br />
+                <a href='https://www.instagram.com/amarjit_pheiroijam' >Amarjit Pheiroijam</a>
+            </div >
 
 
         </div >
