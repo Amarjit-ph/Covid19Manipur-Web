@@ -16,7 +16,7 @@ const App = () => {
     const [Tconfirm, setTconfrim] = useState(0)
     const [Trecovered, setTrecovered] = useState(0)
     const [Tdead, setTdead] = useState(0)
-    const [Ttested, setTtested] = useState(0)
+    const [Ttested, setTtested] = useState("No Data")
     const [update, setupdate] = useState('')
 
     const [Delta, setDelta] = useState(false)
@@ -107,7 +107,7 @@ const App = () => {
             .then(res => res.json())
             .then(data => Data = data)
             .then(data => {
-                //console.log(Data);
+                console.log(Data);
 
                 setConfirm(Data.MN.total.confirmed);
                 setRecovered(Data.MN.total.recovered);
@@ -116,10 +116,21 @@ const App = () => {
                 setDead(Data.MN.total.deceased);
 
                 try {
-                    setTconfrim(Data.MN.delta.confirmed)
-                    setTrecovered(Data.MN.delta.recovered)
-                    setTtested(Data.MN.delta.tested)
-                    setTdead(Data.MN.delta.deceased)
+                    if (Data.MN.delta.confirmed) {
+                        setTconfrim(Data.MN.delta.confirmed)
+                    }
+
+                    if (Data.MN.delta.recovered) {
+                        setTrecovered(Data.MN.delta.recovered)
+
+                    }
+                    if (Data.MN.delta.tested) {
+                        setTtested(Data.MN.delta.tested)
+
+                    }
+                    if (Data.MN.delta.deceased) {
+                        setTdead(Data.MN.delta.deceased)
+                    }
                     setDelta(true);
                 } catch (exception) {
                     setDelta(false);
@@ -214,23 +225,22 @@ const App = () => {
     }, [])
 
     return (
-        <Layout>
-            <div>
-                <div className='Header'>
-                    <img src="https://res.cloudinary.com/dfpnwhdht/image/upload/v1596191016/virus_dcthhk.svg" />
-                    <div>
-                        <p className='T' style={{ marginBottom: '5px' }}><b>COVID <span>19</span></b></p>
-                        <p className='S' style={{ marginBottom: 0 }}><b>MANIPUR</b></p>
-                    </div>
-
+        <div>
+            <div className='Header'>
+                <img src="https://res.cloudinary.com/dfpnwhdht/image/upload/v1596191016/virus_dcthhk.svg" />
+                <div>
+                    <p className='T' style={{ marginBottom: '5px' }}><b>COVID <span>19</span></b></p>
+                    <p className='S' style={{ marginBottom: 0 }}><b>MANIPUR</b></p>
                 </div>
+            </div>
+            <div className='Description'>
+                <p><b>Corona Virus Tracker for Manipur is Developed using data from Directorate of Information & Public Relations Manipur.</b></p>
+            </div>
 
-
+            <Layout>
                 <div className='state'>
-
-                    <p><b>Corona Virus Tracker for Manipur is Developed using data from Directorate of Information & Public Relations Manipur</b></p>
                     <div>
-                        <span className='N1'><b>{Active - Tdead}</b></span>
+                        <span className='N1'><b>{Active - Dead}</b></span>
                         <span className='T1'><b>Active</b></span>
                     </div>
 
@@ -246,7 +256,7 @@ const App = () => {
 
                     <div>
                         <span className='N5'><b>{Dead}</b></span>
-                        <span className='T4'><b>Dead</b></span>
+                        <span className='T5'><b>Deaths</b></span>
                     </div>
 
                     <div>
@@ -256,13 +266,15 @@ const App = () => {
 
                     <br />
                 </div>
-                <p><b>Last Updated : {update}</b></p>
-                <b><p>This is not Real Time data but data will be updated every single day.</p></b>
-                <h3>TODAY</h3>
-                <p><b>Daily Update will be displayed when data is Available</b></p>
+            </Layout>
 
-                {
-                    Delta ?
+            <div className='district_head'>
+                <p><b>UPDATE<br />{update}</b></p>
+            </div>
+
+            {
+                Delta ?
+                    <Layout>
                         <div className='today'>
                             <div>
                                 <span className='N2'><b>{Tconfirm}</b></span>
@@ -276,24 +288,23 @@ const App = () => {
 
                             <div>
                                 <span className='N5'><b>{Tdead}</b></span>
-                                <span className='T4'><b>Dead</b></span>
-                            </div>
-
-                            <div>
-                                <span className='N4'><b>{Ttested}</b></span>
-                                <span className='T4'><b>Tested</b></span>
+                                <span className='T4'><b>Deaths</b></span>
                             </div>
                         </div>
-                        :
-                        <div></div>
-                }
+                    </Layout>
+                    :
+                    <div></div>
+            }
 
 
 
 
 
-                <h2>DISTRICT LEVEL</h2>
+            <div className='district_head'>
+                <p><b>DISTRICT<br />LEVEL</b></p>
+            </div>
 
+            <Layout>
                 <div className='District_level'>
                     <div>
                         <p><b>Bishnupur</b></p>
@@ -384,29 +395,13 @@ const App = () => {
                     </div>
 
                 </div>
+            </Layout>
 
 
-            </div >
-        </Layout >
+        </div >
     )
 }
 
-/*
-Churachandpur
-Imphal East
-Imphal West
-Jiribam
-Kakching
-Kamjong
-Kangpokpi
-Noney
-Pherzawl
-Senapati
-Tamenglong
-Tengnoupal
-Thoubal
-Ukhrul
-*/
 
 //console.log(process.env.APIKEY1);
 //console.log(process.env.APIKEY2);
