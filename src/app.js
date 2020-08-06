@@ -226,7 +226,9 @@ const App = () => {
 
     return (
         <div>
+
             <div className='Header'>
+
                 <img src="https://res.cloudinary.com/dfpnwhdht/image/upload/v1596191016/virus_dcthhk.svg" />
                 <div>
                     <p className='T' style={{ marginBottom: '5px' }}><b>COVID <span>19</span></b></p>
@@ -404,7 +406,6 @@ const App = () => {
                 <p><b>DESIGN & DEVELOPED</b></p><br />
                 <a href='https://www.instagram.com/amarjit_pheiroijam' >Amarjit Pheiroijam</a>
             </div >
-
 
         </div >
     )
