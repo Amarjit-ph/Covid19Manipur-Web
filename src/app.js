@@ -7,6 +7,8 @@ import Layout from './components/Layout'
 
 const App = () => {
     let Data;
+
+    var d = new Date();
     const [Confirm, setConfirm] = useState('');
     const [Recovered, setRecovered] = useState('');
     const [Active, setActive] = useState('');
@@ -276,8 +278,7 @@ const App = () => {
                 Delta ?
                     <div>
                         <div className='district_head'>
-                            <p><b>TODAY<br />
-                            UPDATE</b></p>
+                            <p><b>DATE<br />{d.getDate()}-{d.getMonth()}-{d.getFullYear()}</b></p>
                         </div>
                         <Layout>
                             <div className='today'>
