@@ -278,7 +278,7 @@ const App = () => {
                 Delta ?
                     <div>
                         <div className='district_head'>
-                            <p><b>DATE<br />{d.getDate()}-{d.getMonth()}-{d.getFullYear()}</b></p>
+                            <p><b>DATE<br />{d.getDate()}-{d.getMonth() + 1}-{d.getFullYear()}</b></p>
                         </div>
                         <Layout>
                             <div className='today'>
