@@ -276,7 +276,8 @@ const App = () => {
                 Delta ?
                     <div>
                         <div className='district_head'>
-                            <p><b>TODAY<br />UPDATE</b></p>
+                            <p><b>TODAY<br />
+                            UPDATE</b></p>
                         </div>
                         <Layout>
                             <div className='today'>
