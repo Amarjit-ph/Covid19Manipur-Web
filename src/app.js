@@ -244,22 +244,22 @@ const App = () => {
             <Layout>
                 <div className='state'>
                     <div className='A'>
-                        <span className='N1'><b>{Active - Dead}</b></span>
+                        <span className='N1'><b>1530{/*Active - Dead*/}</b></span>
                         <span className='T1'><b>Active</b></span>
                     </div>
 
                     <div>
-                        <span className='N2'><b>{Confirm}</b></span>
+                        <span className='N2'><b>3466{/*Confirm*/}</b></span>
                         <span className='T2'><b>Confirmed</b></span>
                     </div>
 
                     <div>
-                        <span className='N3'><b>{Recovered}</b></span>
+                        <span className='N3'><b>1926{/*Recovered*/}</b></span>
                         <span className='T3'><b>Recovered</b></span>
                     </div>
 
                     <div>
-                        <span className='N5'><b>{Dead}</b></span>
+                        <span className='N5'><b>10{/*Dead*/}</b></span>
                         <span className='T5'><b>Deaths</b></span>
                     </div>
 
@@ -283,17 +283,21 @@ const App = () => {
                         <Layout>
                             <div className='today'>
                                 <div>
-                                    <span className='N2'><b>{Tconfirm}</b></span>
+                                    <span className='N2'><b>249{//Tconfirm}
+                                    }</b></span>
                                     <span className='T2'><b>Confirmed</b></span>
                                 </div>
 
                                 <div>
-                                    <span className='N3'><b>{Trecovered}</b></span>
+                                    <span className='N3'><b>21{//Trecovered
+                                    }
+                                    </b></span>
                                     <span className='T3'><b>Recovered</b></span>
                                 </div>
 
                                 <div>
-                                    <span className='N5'><b>{Tdead}</b></span>
+                                    <span className='N5'><b>2{//Tdead
+                                    }</b></span>
                                     <span className='T4'><b>Deaths</b></span>
                                 </div>
                             </div>
