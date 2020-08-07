@@ -8,6 +8,25 @@ import Layout from './components/Layout'
 const App = () => {
     let Data;
 
+    const Static = {
+        S_active: 1530,
+        S_confirmed: 3466,
+        S_recovered: 1926,
+        S_dead: 10,
+        S_tested: 96837,
+
+        SD_confirmed: 249,
+        SD_recovered: 21,
+        SD_dead: 2,
+        SD_tested: 2029,
+
+
+        Q_completed: 20178 + 39457 + 2947,
+        Q_gov: 996,
+        Q_community: 1580,
+        Q_paid: 419
+    }
+
     var d = new Date();
     const [Confirm, setConfirm] = useState('');
     const [Recovered, setRecovered] = useState('');
@@ -244,27 +263,27 @@ const App = () => {
             <Layout>
                 <div className='state'>
                     <div className='A'>
-                        <span className='N1'><b>1530{/*Active - Dead*/}</b></span>
+                        <span className='N1'><b>{Static.S_active}</b></span>
                         <span className='T1'><b>Active</b></span>
                     </div>
 
                     <div>
-                        <span className='N2'><b>3466{/*Confirm*/}</b></span>
+                        <span className='N2'><b>{Static.S_confirmed}</b></span>
                         <span className='T2'><b>Confirmed</b></span>
                     </div>
 
                     <div>
-                        <span className='N3'><b>1926{/*Recovered*/}</b></span>
+                        <span className='N3'><b>{Static.S_recovered}</b></span>
                         <span className='T3'><b>Recovered</b></span>
                     </div>
 
                     <div>
-                        <span className='N5'><b>10{/*Dead*/}</b></span>
+                        <span className='N5'><b>{Static.S_dead}</b></span>
                         <span className='T5'><b>Deaths</b></span>
                     </div>
 
                     <div>
-                        <span className='N4'><b>{Tested}</b></span>
+                        <span className='N4'><b>{Static.S_tested}</b></span>
                         <span className='T4'><b>Tested</b></span>
                     </div>
 
@@ -274,7 +293,7 @@ const App = () => {
 
 
 
-            {
+            {/*
                 Delta ?
                     <div>
                         <div className='district_head'>
@@ -283,29 +302,89 @@ const App = () => {
                         <Layout>
                             <div className='today'>
                                 <div>
-                                    <span className='N2'><b>249{//Tconfirm}
-                                    }</b></span>
+                                    <span className='N2'><b>{Static.SD_confirmed}</b></span>
                                     <span className='T2'><b>Confirmed</b></span>
                                 </div>
 
                                 <div>
-                                    <span className='N3'><b>21{//Trecovered
-                                    }
-                                    </b></span>
+                                    <span className='N3'><b>{Static.SD_recovered}</b></span>
                                     <span className='T3'><b>Recovered</b></span>
                                 </div>
 
                                 <div>
-                                    <span className='N5'><b>2{//Tdead
-                                    }</b></span>
+                                    <span className='N5'><b>{Static.SD_dead}</b></span>
                                     <span className='T4'><b>Deaths</b></span>
+                                </div>
+                                <div>
+                                    <span className='N5'><b>{Static.SD_tested}</b></span>
+                                    <span className='T5'><b>Tested</b></span>
                                 </div>
                             </div>
                         </Layout>
                     </div>
                     :
                     <div></div>
+                    */
             }
+
+            <div>
+                <div className='district_head'>
+                    <p><b>DATE<br />7-8-2020</b></p>
+                    <br />
+                    <h4>Daily Updates are performed<br /> at the End of the Day.</h4>
+                    <h4>Read Press Release At Bottom</h4>
+                </div>
+                <Layout>
+                    <div className='today'>
+                        <div>
+                            <span className='N2'><b>{Static.SD_confirmed}</b></span>
+                            <span className='T2'><b>Confirmed</b></span>
+                        </div>
+
+                        <div>
+                            <span className='N3'><b>{Static.SD_recovered}</b></span>
+                            <span className='T3'><b>Recovered</b></span>
+                        </div>
+
+                        <div>
+                            <span className='N5'><b>{Static.SD_dead}</b></span>
+                            <span className='T4'><b>Deaths</b></span>
+                        </div>
+                        <div>
+                            <span className='N5'><b>{Static.SD_tested}</b></span>
+                            <span className='T5'><b>Tested</b></span>
+                        </div>
+                    </div>
+                </Layout>
+            </div>
+
+            <div>
+                <div className='district_head'>
+                    <p><b>QUARANTINE<br /></b>POPULATION</p>
+                </div>
+                <Layout>
+                    <div className='today'>
+                        <div>
+                            <span className='N2'><b>{Static.Q_completed}</b></span>
+                            <span className='T4'><b>Quarantine Completed</b></span>
+                        </div>
+
+                        <div>
+                            <span className='N3'><b>{Static.Q_gov}</b></span>
+                            <span className='T4'><b>Government Quarantine</b></span>
+                        </div>
+
+                        <div>
+                            <span className='N5'><b>{Static.Q_community}</b></span>
+                            <span className='T4'><b>Community Qurantine</b></span>
+                        </div>
+                        <div>
+                            <span className='N5'><b>{Static.Q_paid}</b></span>
+                            <span className='T4'><b>Paid Qurantine</b></span>
+                        </div>
+                    </div>
+                </Layout>
+            </div>
 
 
 
@@ -407,6 +486,40 @@ const App = () => {
 
                 </div>
             </Layout>
+
+
+
+            <div><p name="A" style={{ textAlign: 'center', color: 'white', backgroundColor: 'black', padding: '10px', marginBottom: 0 }}>
+                <b>GOVERNMENT OF MANIPUR<br />
+            DIRECTORATE OF INFORMATION & PUBLIC RELATIONS<br />
+                    <br />
+            PRESS RELEASE<br /><br />
+            LIFTING AND DISTRIBUTION CONTINUE FOR PDS RICE UNDER NFSA AND PMGKAY</b><br /><br /></p>
+
+                <p style={{ textAlign: 'justify', padding: '20px', color: 'white', backgroundColor: 'black', marginBottom: '5px' }}>Imphal, August 7, 2020 (DIPR):<br />
+            To ensure availability Of foodgrain specially rice, across the State.
+            PDS rice under National Fmd Security Act (NFSA) and Pradhan Mantri Garib Kalyan Anna Yojana (PMGKAY)
+            are lifted and distributed in the State.<br /><br />
+
+            In lifting of PDS rice in Imphal West district today, a total 2009.4 quintal of rice under NFSA
+            for the month of July. The lifted quantities with the ACS are 1630.6 for Sagolband AC and
+            378.8 quintal for Yaiskul AC. In the district too, 6218.35 quantity Of rice under NFSA was distributed
+            in Thangmeiband, Lamsang & Langthabal ACs while 4186.45 quantity under PMGKAY was also distributed in Lamsang,
+            Sekmai & Yaiskul(Pt).<br /><br />
+
+            In Thoubal district, 772.30 quintal and 1279 quintal Of rice under PMGKAY for the month of July were
+            lifted on August 3 & 5, 2020 respectively. It is also reported that 2051.3 quintal of rice under PMGKAY
+            was distributed to the beneficiaries of Wangjing Tentha AC today. Another 5.1 quintal & 1.5 quintal of Rice
+            & Chana Dal (for migrant worker for May & June) was distributed to migrant workers Of Assam, UP and Bihar.
+            In respect Of Nungba AC in Noney district today, 128.9 quintal Of rice under PMGKAY for the month of August
+            was lifted from FCI godown, Sangaiprou.<br />
+
+            The State Government has been distributing PDS items in all the districts
+            of Manipur to ensure none to suffer on account of non-availability of foodgrains on the backdrop of the outbreak
+            of COVID-19 and the ongoing lockdown in the State.
+
+            </p>
+            </div>
 
             <div className='Footer'>
                 <p><b>DESIGN & DEVELOPED</b></p><br />
