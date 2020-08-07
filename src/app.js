@@ -376,11 +376,11 @@ const App = () => {
 
                         <div>
                             <span className='N5'><b>{Static.Q_community}</b></span>
-                            <span className='T4'><b>Community Qurantine</b></span>
+                            <span className='T4'><b>Community Quarantine</b></span>
                         </div>
                         <div>
                             <span className='N5'><b>{Static.Q_paid}</b></span>
-                            <span className='T4'><b>Paid Qurantine</b></span>
+                            <span className='T4'><b>Paid Quranatine</b></span>
                         </div>
                     </div>
                 </Layout>
@@ -489,7 +489,7 @@ const App = () => {
 
 
 
-            <div><p name="A" style={{ textAlign: 'center', color: 'white', backgroundColor: 'black', padding: '10px', marginBottom: 0 }}>
+            <div><p name="A" style={{ textAlign: 'center', color: 'white', backgroundColor: 'black', padding: '10px', marginBottom: 0, paddingTop: '40px' }}>
                 <b>GOVERNMENT OF MANIPUR<br />
             DIRECTORATE OF INFORMATION & PUBLIC RELATIONS<br />
                     <br />
@@ -521,7 +521,7 @@ const App = () => {
             </p>
             </div>
 
-            <div className='Footer'>
+            <div style={{ marginBottom: '5px' }} className='Footer'>
                 <p><b>DESIGN & DEVELOPED</b></p><br />
                 <a href='https://www.instagram.com/amarjit_pheiroijam' >Amarjit Pheiroijam</a>
             </div >
