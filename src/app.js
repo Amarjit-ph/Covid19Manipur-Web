@@ -332,7 +332,7 @@ const App = () => {
                     <p><b>DATE<br />7-8-2020</b></p>
                     <br />
                     <h4>Daily Updates are performed<br /> at the End of the Day.</h4>
-                    <h4>Read Press Release At Bottom</h4>
+                    <h4>Read Press Release At the Bottom</h4>
                 </div>
                 <Layout>
                     <div className='today'>
