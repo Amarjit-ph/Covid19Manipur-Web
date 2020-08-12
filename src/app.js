@@ -9,17 +9,17 @@ const App = () => {
     let Data;
 
     const Static = {
-        S_active: 1774,
-        S_confirmed: 3941,
-        S_recovered: 2155,
+        S_active: 1739,
+        S_confirmed: 3982,
+        S_recovered: 2231,
         S_dead: 12,
-        S_tested: 104268,
-        daily: false,
+        S_tested: 104268 + 2038,
+        daily: true,
 
-        SD_confirmed: 100,
-        SD_recovered: 78,
+        SD_confirmed: 34,
+        SD_recovered: 76,
         SD_dead: 0,
-        SD_tested: 2038,
+        SD_tested: 2058,
 
 
         Q_completed: 20178 + 39457 + 2947,
@@ -337,7 +337,7 @@ const App = () => {
                 Static.daily ?
                     <div>
                         <div className='district_head'>
-                            <p><b>DATE<br />10-8-2020</b></p>
+                            <p><b>DATE<br />12-8-2020</b></p>
                             <br />
                             <h4>Daily Updates are performed<br />when the Data are Available.</h4>
                         </div>
