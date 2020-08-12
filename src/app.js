@@ -13,7 +13,7 @@ const App = () => {
         S_confirmed: 3941,
         S_recovered: 2155,
         S_dead: 12,
-        S_tested: 103268,
+        S_tested: 104268,
         daily: false,
 
         SD_confirmed: 100,
