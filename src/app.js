@@ -9,12 +9,12 @@ const App = () => {
     let Data;
 
     const Static = {
-        S_active: 1720,
-        S_confirmed: 3853,
-        S_recovered: 2122,
-        S_dead: 11,
+        S_active: 1774,
+        S_confirmed: 3941,
+        S_recovered: 2155,
+        S_dead: 12,
         S_tested: 103268,
-        daily: true,
+        daily: false,
 
         SD_confirmed: 100,
         SD_recovered: 78,
