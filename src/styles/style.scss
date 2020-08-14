@@ -27,7 +27,7 @@
     }
     div{
         p{
-            letter-spacing: inherit;;
+            letter-spacing: inherit;
 
         }
         
@@ -37,6 +37,7 @@
         flex-direction: column;
     }
 }
+
 .Description{
     padding: 25px;
     padding-top: 30%;
@@ -231,4 +232,143 @@
         color: white;
         font-size: 1rem;
     }
+}
+
+
+@media (min-width:500px){
+    .Header{
+    position: inherit;
+    padding-left:15%;
+        img{
+            height:20%;
+            width: 20%;
+            margin-bottom: 0;
+            max-width: 67px;
+            max-height: 67px;
+        }
+        .T{
+            font-size:2rem;
+        }
+        .S{
+            font-size:2rem;
+        }
+    }
+    .Description{
+        padding-top: 5px;
+        padding-left: 16%;
+        padding-right:15%;
+    }
+    .state{    
+        div{
+            width: 100%;
+            padding: 3.3vw;
+            .N1{
+                color: white;
+                font-size: 10vw;
+                padding-top: 10px;
+            }
+            .T1{
+                font-size: 5vw;
+                color: white;
+                padding-top: 8%;
+            }
+    
+            .N2{
+                color: white;
+                font-size: 10vw;
+                padding-top: 35px;
+            }
+            .T2{
+                font-size: 5vw;
+                padding-top: 8%;
+                color:#FF0000;
+            }
+    
+            .N3{
+                color: white;
+                font-size: 10vw;
+                padding-top: 10px;
+            }
+            .T3{
+                font-size: 5vw;
+                padding-top: 8%;
+                color:#1DAA1D;
+            }
+            .N5{
+                color:white;
+                font-size: 10vw;
+                padding-top: 10px;
+            }
+            .T5{
+                font-size: 5vw;
+                padding-top: 8%;
+                color:white;
+    
+            }
+    
+            .N4{
+                color: white;
+                font-size: 10vw;
+                padding-top: 10px;
+            }
+            .T4{
+                font-size: 5vw;
+                padding-top: 8%;
+                color:#0C79DF ;
+            }
+            
+        }
+    }
+
+
+.today{
+    div{
+        width: 100%;
+        border: solid black 2px;
+        padding: 2vw;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        background-color: black;
+    }
+    .N2{
+        color:white;
+        font-size: 5vw;
+        padding-top: 5px;
+    }
+    .T2{
+        font-size: 3vw;
+        padding-top: 15px;
+        color:#FF0000;
+    }
+
+    .N3{
+        color:white;
+        font-size: 5vw;
+        padding-top: 5px;
+    }
+    .T3{
+        font-size: 3vw;
+        padding-top: 15px;
+        color:#1DAA1D;
+    }
+    .N5{
+
+        color: white;
+        font-size: 5vw;
+        padding-top: 5px;
+    }
+
+    .T4{
+        font-size: 3vw;
+        padding-top: 15px;
+        color:white;
+    }
+    .T5{
+        font-size: 3vw;
+        padding-top: 15px;
+        color:#0C79DF;
+    }
+
+}
 }
