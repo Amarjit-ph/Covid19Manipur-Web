@@ -9,17 +9,17 @@ const App = () => {
     let Data;
 
     const Static = {
-        S_active: 1825,
-        S_confirmed: 4198,
-        S_recovered: 2360,
+        S_active: 1939,
+        S_confirmed: 4390,
+        S_recovered: 2438,
         S_dead: 13,
-        S_tested: 110026,
+        S_tested: 112780,
         daily: true,
 
-        SD_confirmed: 86,
-        SD_recovered: 65,
+        SD_confirmed: 192,
+        SD_recovered: 78,
         SD_dead: 0,
-        SD_tested: 2557,
+        SD_tested: 2754,
 
 
         Q_completed: 20178 + 39457 + 2947,
@@ -258,9 +258,11 @@ const App = () => {
                 </div>
             </div>
             <div className='Description'>
-                <p><b>Corona Virus Tracker for Manipur is Developed using data from Directorate of Information & Public Relations Manipur.</b></p>
+                <p><b>New cases continues to be detected amongst people who have no history of travel outside the state.</b></p>
                 <p style={{ marginBottom: '0px' }}><b>HELPLINE NUMBER</b></p>
                 <h2 style={{ marginTop: '2px' }}>1800-103-2015</h2>
+                <p><b>State Executive Committee of the State Disaster Management Authority orders extension of the Complete lockdown in the entire state till <span style={{ color: 'red' }}>31 August 2020</span> until further orders.</b></p>
+
             </div>
 
             <Layout>
@@ -337,7 +339,7 @@ const App = () => {
                 Static.daily ?
                     <div>
                         <div className='district_head'>
-                            <p><b>DATE<br />14-8-2020</b></p>
+                            <p><b>DATE<br />15-8-2020</b></p>
                             <br />
                             <h4>Daily Updates are performed<br />when the Data are Available.</h4>
                         </div>
@@ -497,7 +499,9 @@ const App = () => {
 
                 </div>
             </Layout>
-
+            <div className='Description'>
+                <p><b>Corona Virus Tracker for Manipur is Developed using data from Directorate of Information & Public Relations Manipur.</b></p>
+            </div>
             <div style={{ marginBottom: '5px' }} className='Footer'>
                 <p><b>DESIGN & DEVELOPED</b></p><br />
                 <a href='https://www.instagram.com/amarjit_pheiroijam' >Amarjit Pheiroijam</a>
