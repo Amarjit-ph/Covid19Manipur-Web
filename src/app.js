@@ -9,17 +9,17 @@ const App = () => {
     let Data;
 
     const Static = {
-        S_active: 1921,
-        S_confirmed: 4569,
-        S_recovered: 2632,
-        S_dead: 16,
+        S_active: 1936,
+        S_confirmed: 4569 + 94,
+        S_recovered: 2632 + 94,
+        S_dead: 16 + 1,
         S_tested: 115041,
         daily: true,
 
-        SD_confirmed: 194,
-        SD_recovered: 78,
-        SD_dead: 3,
-        SD_tested: 2261,
+        SD_confirmed: 94,
+        SD_recovered: 102,
+        SD_dead: 1,
+        SD_tested: 2205,
 
 
         Q_completed: 20178 + 39457 + 2947,
@@ -261,7 +261,8 @@ const App = () => {
                 <p><b>New cases continues to be detected amongst people who have no history of travel outside the state.</b></p>
                 <p style={{ marginBottom: '0px' }}><b>HELPLINE NUMBER</b></p>
                 <h2 style={{ marginTop: '2px' }}>1800-103-2015</h2>
-                <p><b>State Executive Committee of the State Disaster Management Authority orders extension of the Complete lockdown in the entire state till <span style={{ color: 'red' }}>31 August 2020</span> until further orders.</b></p>
+                <p><b>Persons above 65 years of age, person with co-morbidities, pregnant women and children below the age of 10 years are advised to stay at home, execpt for essestial and health purposes.</b></p>
+                <p><b>LAST UPDATE<br />17 August 2020 | 9:30 PM </b></p>
 
             </div>
 
@@ -339,7 +340,7 @@ const App = () => {
                 Static.daily ?
                     <div>
                         <div className='district_head'>
-                            <p><b>DATE<br />16-8-2020</b></p>
+                            <p><b>DATE<br />17-8-2020</b></p>
                             <br />
                             <h4>Daily Updates are performed<br />when the Data are Available.</h4>
                         </div>
@@ -374,6 +375,8 @@ const App = () => {
                 <div className='district_head'>
                     <p><b>QUARANTINE<br /></b>POPULATION</p>
                 </div>
+                <br />
+                <br />
                 <Layout>
                     <div className='today'>
                         <div>
