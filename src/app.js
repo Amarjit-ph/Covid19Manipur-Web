@@ -9,15 +9,15 @@ const App = () => {
     let Data;
 
     const Static = {
-        S_active: 1936,
-        S_confirmed: 4569 + 94,
-        S_recovered: 2632 + 94,
-        S_dead: 16 + 1,
-        S_tested: 115041,
+        S_active: 1958,
+        S_confirmed: 4765,
+        S_recovered: 2789,
+        S_dead: 18,
+        S_tested: 115041 + 2205,
         daily: true,
 
-        SD_confirmed: 94,
-        SD_recovered: 102,
+        SD_confirmed: 73,
+        SD_recovered: 55,
         SD_dead: 1,
         SD_tested: 2205,
 
@@ -258,13 +258,12 @@ const App = () => {
                 </div>
             </div>
             <div className='Description'>
-                <p><b>New cases continues to be detected amongst people who have no history of travel outside the state.</b></p>
+                <p><b>Corona Virus Tracker for Manipur is Developed using data from Directorate of Information & Public Relations Manipur.</b></p>
                 <p style={{ marginBottom: '0px' }}><b>HELPLINE NUMBER</b></p>
                 <h2 style={{ marginTop: '2px' }}>1800-103-2015</h2>
-                <p><b>Persons above 65 years of age, person with co-morbidities, pregnant women and children below the age of 10 years are advised to stay at home, execpt for essestial and health purposes.</b></p>
-                <p><b>LAST UPDATE<br />17 August 2020 | 9:30 PM </b></p>
+                <p><b> LAST UPDATED <br />18 AUGUST 2020</b></p>
 
-            </div>
+            </div >
 
             <Layout>
                 <div className='state'>
@@ -340,7 +339,7 @@ const App = () => {
                 Static.daily ?
                     <div>
                         <div className='district_head'>
-                            <p><b>DATE<br />17-8-2020</b></p>
+                            <p><b>DATE<br />18-8-2020</b></p>
                             <br />
                             <h4>Daily Updates are performed<br />when the Data are Available.</h4>
                         </div>
@@ -502,10 +501,8 @@ const App = () => {
 
                 </div>
             </Layout>
-            <div className='Description'>
-                <p><b>Corona Virus Tracker for Manipur is Developed using data from Directorate of Information & Public Relations Manipur.</b></p>
-            </div>
-            <div style={{ marginBottom: '5px' }} className='Footer'>
+
+            <div style={{ marginBottom: '10px' }} className='Footer'>
                 <p><b>DESIGN & DEVELOPED</b></p><br />
                 <a href='https://www.instagram.com/amarjit_pheiroijam' >Amarjit Pheiroijam</a>
             </div >
