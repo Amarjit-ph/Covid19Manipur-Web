@@ -9,17 +9,17 @@ const App = () => {
     let Data;
 
     const Static = {
-        S_active: 1608,
-        S_confirmed: 5444,
-        S_recovered: 3812,
-        S_dead: 24,
-        S_tested: 137384,
+        S_active: 1871,
+        S_confirmed: 6507,
+        S_recovered: 4607,
+        S_dead: 29,
+        S_tested: 160871,
         daily: true,
 
-        SD_confirmed: 82,
-        SD_recovered: 99,
-        SD_dead: 2,
-        SD_tested: 1985,
+        SD_confirmed: 125,
+        SD_recovered: 157,
+        SD_dead: 0,
+        SD_tested: 2773,
 
 
         Q_completed: 20178 + 39457 + 2947,
@@ -261,7 +261,7 @@ const App = () => {
                 <p><b>Corona Virus Tracker for Manipur is Developed using data from Directorate of Information & Public Relations Manipur.</b></p>
                 <p style={{ marginBottom: '0px' }}><b>HELPLINE NUMBER</b></p>
                 <h2 style={{ marginTop: '2px' }}>1800-103-2015</h2>
-                <p><b> LAST UPDATED <br />25 AUGUST 2020</b></p>
+                <p><b> LAST UPDATED <br />2 SEPTEMBER 2020</b></p>
 
             </div >
 
@@ -339,7 +339,7 @@ const App = () => {
                 Static.daily ?
                     <div>
                         <div className='district_head'>
-                            <p><b>DATE<br />25-8-2020</b></p>
+                            <p><b>DATE<br />2-9-2020</b></p>
                             <br />
                             <h4>Daily Updates are performed<br />when the Data are Available.</h4>
                         </div>
