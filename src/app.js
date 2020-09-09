@@ -9,16 +9,16 @@ const App = () => {
     let Data;
 
     const Static = {
-        S_active: 1710,
-        S_confirmed: 7106,
-        S_recovered: 5358,
-        S_dead: 38,
+        S_active: 1774,
+        S_confirmed: 7362,
+        S_recovered: 5548,
+        S_dead: 40,
         S_tested: 174731,
         daily: true,
 
-        SD_confirmed: 84,
-        SD_recovered: 194,
-        SD_dead: 0,
+        SD_confirmed: 135,
+        SD_recovered: 84,
+        SD_dead: 1,
         SD_tested: 2171,
 
 
