@@ -9,10 +9,10 @@ const App = () => {
     let Data;
 
     const Static = {
-        S_active: 1774,
-        S_confirmed: 7362,
-        S_recovered: 5548,
-        S_dead: 40,
+        S_active: 1109,
+        S_confirmed: 28322,
+        S_recovered: 26862,
+        S_dead: 361,
         S_tested: 174731,
         daily: true,
 
@@ -261,7 +261,7 @@ const App = () => {
                 <p><b>Corona Virus Tracker for Manipur is Developed using data from Directorate of Information & Public Relations Manipur.</b></p>
                 <p style={{ marginBottom: '0px' }}><b>HELPLINE NUMBER</b></p>
                 <h2 style={{ marginTop: '2px' }}>1800-103-2015</h2>
-                <p><b> LAST UPDATED <br />7 SEPTEMBER 2020</b></p>
+                <p><b> LAST UPDATED <br />4 JANUARY 2021</b></p>
 
             </div >
 
